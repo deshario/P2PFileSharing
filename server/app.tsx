@@ -1,9 +1,7 @@
 import express from 'express'
 import next from 'next';
-
 import cors from 'cors';
-import { initSocket } from './sockets';
-import http, { createServer, Server } from "http";
+import { initSocket } from './sockets'
 import { NODE_ENV, PORT } from "./config/environment"
 
 const dev = NODE_ENV !== 'production';
@@ -13,9 +11,6 @@ const handle = nextApp.getRequestHandler();
 (async () => {
   await nextApp.prepare();
   const app = express();
-
-  const server: Server = http.createServer(app);
-  initSocket(server);
 
   app
   .use(cors())
@@ -28,10 +23,10 @@ const handle = nextApp.getRequestHandler();
   })
   .get('*', (req, res) => handle(req, res));
 
-  const httpServer = createServer(app);
-
-  httpServer.listen(PORT, (): void => {
-    console.log(`> Server listening at port: ${PORT} <`);
+  const server = app.listen(PORT, () => {
+    console.log(`> Server listening on port ${PORT} <`)
   });
+
+  initSocket(server)
 
 })();
