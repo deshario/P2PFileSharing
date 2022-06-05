@@ -10,8 +10,7 @@ const webRTCConnectionInfo = {
   ],
 };
 
-// const socketURL = 'http://localhost:8000';
-const socketURL = 'http://192.168.182.30:3000';
+const socketURL = 'http://192.168.182.40:3000';
 const getSlugRoute = `${socketURL}/slug`;
 
 export { webRTCConnectionInfo, getSlugRoute, socketURL  };

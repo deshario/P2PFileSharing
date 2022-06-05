@@ -8,7 +8,7 @@
     "dev": "NODE_ENV=development nodemon",
     "build": "next build client",
     "start": "next start client",
-    "prod": "NODE_ENV=production ts-node --project tsconfig.json server/app.tsx",
+    "prod": "NODE_ENV=production ts-node --project tsconfig.json server/app.ts",
     "prettier-format": "prettier --config .prettierrc './server/**/*.ts' --write",
     "lint": "next lint"
   },
@@ -42,6 +42,7 @@
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "babel-plugin-styled-components": "^2.0.7",
     "cors": "^2.8.5",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",

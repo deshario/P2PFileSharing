@@ -6,9 +6,8 @@ class SocketService {
 
   constructor() {
     this.socket = io(socketURL);
-
     this.socket.on("connect", () => {
-      console.log("SOCKET CONNECTED!", this.socket.id);
+      console.log(`🚀 Socket connected: ${this.socket.id}`);
     });
   }
 
